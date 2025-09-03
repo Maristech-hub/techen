@@ -50,8 +50,8 @@ function MyRequests() {
               borderRadius: '5px'
             }}
           >
-            <p><strong>Service:</strong> {req.serviceType}</p>
-            <p><strong>Description:</strong> {req.description}</p>
+            <p><strong>Service:</strong> {req.service}</p>
+            <p><strong>Description:</strong> {req.message}</p>
             <p><small><strong>Submitted:</strong> {new Date(req.createdAt).toLocaleString()}</small></p>
           </li>
         ))}
