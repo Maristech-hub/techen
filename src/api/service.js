@@ -3,7 +3,7 @@ import axios from 'axios';
 
 //const API_BASE_URL = '/api'; // vite proxy will forward to backend
 //const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-const API_BASE_URL = `${process.env.REACT_APP_API_BASE_URL}/api`;
+const API_BASE_URL = `${import.meta.env.VITE_APP_API_BASE_URL}/api`;
 
 export const createServiceRequest = async (formData) => {
   try {

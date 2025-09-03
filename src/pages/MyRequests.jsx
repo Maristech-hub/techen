@@ -12,7 +12,7 @@ function MyRequests() {
       try {
         const token = localStorage.getItem('token'); // store token at login
 
-        const response = await axios.get(`${API_BASE_URL}/requests/my`, {
+        const response = await axios.get(`${API_BASE_URL}/requests/my-requests`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
