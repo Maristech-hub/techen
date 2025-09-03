@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Account.css";
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 const Account = () => {
   const navigate = useNavigate();
 
@@ -30,7 +32,7 @@ const Account = () => {
     const fetchData = async () => {
       try {
         // Fetch user profile
-        const res = await fetch("http://localhost:5000/api/users/me", {
+        const res = await fetch(`${API_BASE_URL}/api/users/me`, {
           headers: { Authorization: `Bearer ${token}` }
         });
 
@@ -49,7 +51,7 @@ const Account = () => {
         });
 
         // Fetch requests
-        const reqRes = await fetch("http://localhost:5000/api/requests/my-requests", {
+        const reqRes = await fetch(`${API_BASE_URL}/api/requests/my-requests`, {
           headers: { Authorization: `Bearer ${token}` }
         });
 
@@ -83,7 +85,7 @@ const Account = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:5000/api/users/update", {
+      const res = await fetch(`${API_BASE_URL}/api/users/update`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -110,7 +112,7 @@ const Account = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:5000/api/users/change-password", {
+      const res = await fetch(`${API_BASE_URL}/api/users/change-password`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

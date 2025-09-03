@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 function MyRequests() {
   const [requests, setRequests] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -11,7 +13,7 @@ function MyRequests() {
       try {
         const token = localStorage.getItem('token'); // store token at login
 
-        const response = await axios.get('http://localhost:5000/api/requests/my', {
+        const response = await axios.get(`${API_BASE_URL}/api/requests/my`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

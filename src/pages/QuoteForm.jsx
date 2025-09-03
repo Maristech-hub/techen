@@ -3,6 +3,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './QuoteForm.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 const QuoteForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -25,7 +27,7 @@ const QuoteForm = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('http://localhost:5000/api/requests', {
+      const res = await fetch(`${API_BASE_URL}/api/requests`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
