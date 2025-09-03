@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './QuoteForm.css';
-
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+import API_BASE_URL from "../api/service";
 
 const QuoteForm = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +26,7 @@ const QuoteForm = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/requests`, {
+      const res = await fetch(`${API_BASE_URL}/requests`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

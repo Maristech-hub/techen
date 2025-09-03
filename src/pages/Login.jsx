@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
+import API_BASE_URL from "../api/service";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -23,7 +23,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/users/login`, {
+      const response = await fetch(`${API_BASE_URL}/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)

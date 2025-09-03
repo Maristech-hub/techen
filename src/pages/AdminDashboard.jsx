@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./AdminDashboard.css";
-
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+import API_BASE_URL from "../api/service";
 const AdminDashboard = () => {
   const [requests, setRequests] = useState([]);
   const [users, setUsers] = useState([]); // ✅ Users state
@@ -12,7 +11,7 @@ const AdminDashboard = () => {
   const fetchRequests = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`${API_BASE_URL}/api/requests`, {
+      const res = await fetch(`${API_BASE_URL}/requests`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -31,7 +30,7 @@ const AdminDashboard = () => {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`${API_BASE_URL}/api/users/admin/users`, {
+      const res = await fetch(`${API_BASE_URL}/users/admin/users`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -48,7 +47,7 @@ const AdminDashboard = () => {
   const updateRequest = async (id, action, value = null) => {
     try {
       const token = localStorage.getItem("token");
-      await fetch(`${API_BASE_URL}/api/requests/${id}/${action}`, {
+      await fetch(`${API_BASE_URL}/requests/${id}/${action}`, {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -69,7 +68,7 @@ const AdminDashboard = () => {
   const handleDeleteRequest = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await fetch(`${API_BASE_URL}/api/requests/${id}`, {
+      await fetch(`${API_BASE_URL}/requests/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -83,7 +82,7 @@ const AdminDashboard = () => {
   const handleRoleChange = async (id, newRole) => {
     try {
       const token = localStorage.getItem("token");
-      await fetch(`${API_BASE_URL}/api/users/admin/users/${id}`, {
+      await fetch(`${API_BASE_URL}/users/admin/users/${id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -100,7 +99,7 @@ const AdminDashboard = () => {
   const handleDeleteUser = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await fetch(`${API_BASE_URL}/api/users/admin/users/${id}`, {
+      await fetch(`${API_BASE_URL}/users/admin/users/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

@@ -38,3 +38,5 @@ export const completeServiceRequest = async (id) => {
 export const deleteServiceRequest = async (id) => {
   return axios.delete(`${API_BASE_URL}/service-requests/${id}`);
 };
+
+export default API_BASE_URL;
