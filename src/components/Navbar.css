@@ -1,0 +1,60 @@
+Navbar container
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  padding: 12px 20px;
+  color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #ff9800;
+}
+
+/* Hamburger */
+.hamburger {
+  display: block;  /* force it visible */
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 10001 !important;
+  color: white !important;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    flex-direction: column;
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 9999;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .hamburger {
+    display: block !important;
+  }
+}

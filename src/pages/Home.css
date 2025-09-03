@@ -1,0 +1,202 @@
+.home-container {
+  overflow-x: hidden;
+  background-color: #FAF8F6;
+}
+
+/* HERO - remove unnecessary top gap */
+.hero-section {
+  position: relative;
+  background: url('/images/Hero.png') center/cover no-repeat;
+  color: white;
+  padding: 30px 15px;   /* reduced more */
+  margin: 0;            /* absolutely no gap */
+  text-align: center;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section h1 {
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+/* REQUEST SERVICE BUTTON */
+.quote-btn {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 8px 18px; /* tighter */
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  width: auto;          /* ensures button never stretches */
+  white-space: nowrap;  /* prevents wrapping */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.quote-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* SERVICES */
+.services-section {
+  padding: 30px 15px;  /* tighter */
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* less gap */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-card {
+  flex: 1 1 220px;
+  max-width: 260px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: scale(1.03);
+}
+
+.service-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* HOW IT WORKS */
+.how-it-works {
+  padding: 30px 15px;
+  background-color:#0f172a;
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 15px;
+}
+
+.step {
+  width: 160px;
+}
+
+.step-icon {
+  margin-bottom: 8px;
+  color: #007BFF;
+}
+
+/* ABOUT + CONTACT */
+.about-section,
+.contact-section {
+  padding: 30px 15px;
+  text-align: center;
+  color: #0f172a;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color: #0f172a;
+}
+
+/* Scroll to Top */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-top-btn:hover {
+  background-color: #0f172a;
+  transform: scale(1.1);
+}
+
+/* Section Background Variants */
+.section-light-grey {
+  background-color: #F5F5F5;
+  padding: 30px 15px;
+}
+
+.section-light-beige {
+  background-color: #FAF8F6;
+  padding: 30px 15px;
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .step {
+    width: 100%;
+  }
+}

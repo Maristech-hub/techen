@@ -1,0 +1,100 @@
+/* Header.css */
+
+.header {
+  background-color: #0f172a;
+  padding: 10px 10px;
+  margin: auto;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #0f172a;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links,
+.nav-links-mobile {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-left: 0;
+  margin: 0;
+}
+
+.nav-links li a,
+.nav-links-mobile li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links-mobile li a:hover {
+  color: #06b6d4;
+}
+
+.logout-btn {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  background: none !important;
+  border: none;
+  cursor: pointer;
+
+  /* Make it behave like links */
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+}
+
+.logout-btn:hover {
+  color: #06b6d4;
+  background: none !important; /* remove any hover background */
+}
+
+
+/* Mobile styles */
+.menu-icon {
+  display: none;
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Show mobile menu */
+.nav-links-mobile {
+  display: flex;
+  flex-direction: column;
+  background-color: #1e293b;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  width: 200px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}

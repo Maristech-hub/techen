@@ -1,0 +1,14 @@
+/* Reset overflow issues */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure root takes full width with no side gaps */
+#root {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+  text-align: center;
+}
